@@ -81,6 +81,7 @@
     width: vars.$button-desktop-width;
     height: vars.$searchbar-height;
     transition: background-color 0.3s;
+    font-weight: 500;
 
     &:hover {
       background-color: vars.$button-hover-color;
