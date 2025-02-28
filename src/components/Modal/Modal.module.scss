@@ -1,0 +1,48 @@
+@use "../../styles/variables" as vars;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: vars.$color-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  padding: 40px;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
+}
+
+.modalContent {
+  position: relative;
+  max-width: 80%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  background: vars.$white-color;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: calc(100vh - 80px);
+  object-fit: contain;
+}

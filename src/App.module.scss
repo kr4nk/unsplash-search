@@ -1,0 +1,29 @@
+@use "./styles/variables" as vars;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  margin-top: 104px;
+}
+
+.noResults {
+  text-align: left;
+  color: vars.$info-message-color;
+  padding: 40px 80px;
+  margin-top: 104px;
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+    margin-top: 74px;
+  }
+}
+
+.sentinel {
+  height: 10px;
+}

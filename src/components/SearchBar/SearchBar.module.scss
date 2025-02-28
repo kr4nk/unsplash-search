@@ -1,0 +1,106 @@
+@use "../../styles/variables" as vars;
+
+.searchBar {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: 358px;
+    padding: 16px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+
+  .form {
+    position: relative;
+    display: flex;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .input {
+    width: vars.$searchbar-desktop-width;
+    height: vars.$searchbar-height;
+    padding: 10px 0px 10px 36px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: vars.$input-bg;
+
+    &:hover {
+      background-color: vars.$input-hover-bg;
+    }
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: vars.$input-placeholder;
+    }
+
+    @media (max-width: 768px) {
+      flex: 1;
+    }
+  }
+
+  .filledInput {
+    padding-right: 30px;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 30%;
+    width: 20px;
+    height: 19px;
+  }
+
+  .clearIcon {
+    position: absolute;
+    right: 97px;
+    top: 30%;
+    width: 20px;
+    height: 19px;
+  }
+
+  .button {
+    margin-left: 8px;
+    font-size: 1rem;
+    background-color: vars.$button-color;
+    color: vars.$white-color;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: vars.$button-desktop-width;
+    height: vars.$searchbar-height;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: vars.$button-hover-color;
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+  padding: 40px 0 16px 80px;
+  z-index: 2;
+  background: vars.$white-color;
+  width: 100vw;
+  transform: none;
+  top: 0;
+  left: 0;
+  justify-content: unset;
+
+  @media (max-width: 768px) {
+    padding: 10px 16px 16px;
+    width: 100%;
+  }
+}
