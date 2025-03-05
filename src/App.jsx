@@ -50,22 +50,26 @@ function App() {
   }, []);
 
   return (
-    <div className={styles.app}>
+    <>
       <SearchBar
         onSearch={handleSearch}
         isResults={images.length > 0 || isLoading || error}
         isSearched={!error && !isLoading && query && images.length === 0}
       />
-      {error && <div className={styles.errorMessage}>{error}</div>}
       {!error && !isLoading && query && images.length === 0 && (
         <div className={styles.noResults}>{TEXTS.noResults}</div>
       )}
-      <Gallery images={images} openModal={openModal} isLoading={isLoading} />
-      {images.length > 0 && (
+      <>
+        <Gallery
+          images={images}
+          openModal={openModal}
+          isLoading={isLoading}
+          error={error}
+        />
         <div ref={sentinelRef} className={styles.sentinel} />
-      )}
+      </>
       <Modal image={selectedImage} onClose={closeModal} />
-    </div>
+    </>
   );
 }
 

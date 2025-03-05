@@ -1,22 +1,21 @@
 import styles from "./Gallery.module.scss";
-import TEXTS from "../../constants/texts";
+import ImageWithSkeleton from "./ImageWithSkeleton/ImageWithSkeleton";
 
-function Gallery({ images, openModal, isLoading }) {
+function Gallery({ images, openModal, error }) {
   return (
-    <div className={styles.galleryContainer}>
-      {images.map((img) => (
-        <div key={img.id} className={styles.imageWrapper}>
-          <img
+    <>
+      <div className={styles.galleryContainer}>
+        {images.map((img) => (
+          <ImageWithSkeleton
+            key={img.id}
             src={img.urls.thumb}
             alt={img.alt_description}
-            className={styles.image}
-            loading="lazy"
             onClick={() => openModal(img)}
           />
-        </div>
-      ))}
-      {isLoading && <div className={styles.loading}>{TEXTS.loading}</div>}
-    </div>
+        ))}
+      </div>
+      {error && <div className={styles.errorMessage}>{error}</div>}
+    </>
   );
 }
 

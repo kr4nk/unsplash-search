@@ -64,7 +64,7 @@
 
   .clearIcon {
     position: absolute;
-    right: 97px;
+    right: 100px;
     top: 30%;
     width: 20px;
     height: 19px;
@@ -83,14 +83,16 @@
     transition: background-color 0.3s;
     font-weight: 500;
 
-    &:hover {
-      background-color: vars.$button-hover-color;
+    @media (hover: hover) {
+      &:hover {
+        background-color: vars.$button-hover-color;
+      }
     }
   }
 }
 
 .fixed {
-  position: fixed;
+  position: sticky;
   padding: 40px 0 16px 80px;
   z-index: 2;
   background: vars.$white-color;
@@ -100,7 +102,7 @@
   left: 0;
   justify-content: unset;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 10px 16px 16px;
     width: 100%;
   }
