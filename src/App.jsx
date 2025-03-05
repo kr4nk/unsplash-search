@@ -68,7 +68,7 @@ function App() {
         />
         <div ref={sentinelRef} className={styles.sentinel} />
       </>
-      <Modal image={selectedImage} onClose={closeModal} />
+      {selectedImage && <Modal image={selectedImage} onClose={closeModal} />}
     </>
   );
 }
